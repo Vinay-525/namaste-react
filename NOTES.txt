@@ -1,0 +1,13 @@
+<---EPISODE 1--->
+// Learn about CDN
+// Learn abount cross origin
+// Import React without npx create-react-app - using CDN links
+
+//const heading = React.createElement("h1", {}, "Hello World From React");
+--> {} is the place where we give attributes to the tag
+
+React.createElement() gives a react element which is nothing but JS Object
+root.render() takes react element(JS Object) and converts it into HTML element and put it inside
+the root element
+
+<---EPISODE 2--->
