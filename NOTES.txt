@@ -11,3 +11,13 @@ root.render() takes react element(JS Object) and converts it into HTML element a
 the root element
 
 <---EPISODE 2--->
+1. package.json is the configuration for NPM
+2. Package.lock.json keeps an integrity SHA 512 hash to verify that whatever is there in 
+    my dev machine is the same version which is to deploy on production
+    package.lock.json keeps the track of all the exact versions of all the dependencies whereas 
+    package.json keeps the track of approx version of all the dependencies
+3. Transitive Dependencies : Our project has parcel as a dependency and that dependency 
+    is dependent on multiple dependencies and cycle goes on
+4. npx parcel index.html    
+    npx - Just like we have npm, similarly we have something known as npx
+    npx - executing the package - npx <package_name>  
