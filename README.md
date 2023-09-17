@@ -45,3 +45,21 @@
 # Component Composition
 
 - Putting One Component into other component is called component composition
+
+# Props
+
+- Props means properties
+- Passing props to a react component is same as passing arguments to a function
+- React says Never use indexes as keys as it will cause performance hit
+- Not Using Keys (Not Acceptable) <<< Index as keys <<<<<<<<< Unique Id (Best Practices)
+
+# Config Driven UI
+
+- Is the UI which is based on config which is coming from backend
+- Suppose, different states in India have different offers or no offers , so based on that
+  in backend API, our Frontend UI changes
+
+# Hooks
+
+- useParams is given by React Router
+- useMemo - which increases the performance of the app
