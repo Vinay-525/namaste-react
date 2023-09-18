@@ -61,5 +61,89 @@
 
 # Hooks
 
+- Normal JS utility functions
+- useState - Superpowerful State Variables - It maintains the state of the react component . React keeps the track on those state variables that as soon as state variable updates, react triggers the diff aka
+  re-conciliation algorithm and then updates the DOM efficiently (UI)
+
+- - Whenever state variable updates, react re-render this component
+- - React will keep your UI in sync with data layer, as soon as data layer updates , UI layer updates by re-rendering
+- useEffect
 - useParams is given by React Router
 - useMemo - which increases the performance of the app
+- useEffect - Callback fn will be called after the component renders
+- Load -> Render -> Make API Call -> React Re-render
+
+# Exports / Imports
+
+- Two types of exports - Default and Named
+- Default Import / Export :
+- export default Header;
+- import Header from "./Header";
+- Named Import / Export :
+- export const URL = "xyz";
+- import {URL} from "./"
+
+# Namaste Food
+
+- Header
+- - Logo
+- - Nav Items
+- Body
+- - Search
+- - RestaurantContainer
+- - RestaurantCards
+- Footer
+- - Copyright
+- - Links
+- - Address
+- - Contact
+
+# React
+
+- React is fast and efficient in DOM manipulation
+- React uses somthing called as Re-conciliation Algorithm
+- Re-conciliation Algorithm is also known as React Fiber
+- React creates a virtual DOM which is not a actual DOM but a JS representation of Actual DOM
+- Virtual DOM is nothing but a JS Object (React Element eventually)
+- In React 16, a new algorithm has come up which is known as React Fiber
+- React Fiber is a new way of finding the diff and updating the DOM
+- React does not touch the DOM a lot, that is why react is fast
+- Virtual DOM as a concept existed a long back, virtual DOM is not a react thing, React took that that virtual DOM and built its core algorithm on top of virtual DOM. React can efficiently finds out the difference between virtual DOMs (updated and previous) and update the UI. This is the core of React Algorithm
+- React has one of the best render mechanism that means react has very fast render cycles
+- Whenever state variable updates, React triggers a re-conciliation cycle(re-renders the component again)
+- React re-render the whole component again and again but it is only updating the diff (difference of 2 virtual DOMs) in the actual DOM(UI)
+- Actual DOM manipulation is very expensive but react is very smart and efficient in doing faster DOM manipulations
+
+# Diff Algorithm
+
+- Basically finds out the difference between the 2 virtual DOMs - updated virtual DOM and previous virtual DOM
+  Ex:
+
+OLD VIRTUAL DOM
+APP
+
+- BODY (Rate Card Container) - OLD ------- BODY (Rate Card Container) - NEW
+- - RC1 ---------------------------------- - RC1
+- - RC2 ---------------------------------- - RC2
+- - RC3 ---------------------------------- - RC3
+- - RC4 ---- Button Clicked ------------>
+- - RC5
+- - RC6
+- - RC7
+
+# Optional Chaining
+
+- Read about it - JS Concept
+
+# Shimmer UI
+
+- A better way to show loading states in our web or mobile app
+- Show Fake Cards instead of loader to improve user experience
+
+# NextJs
+
+# Recharts
+
+# Material UI
+
+# Redux
