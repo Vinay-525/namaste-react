@@ -147,3 +147,61 @@ APP
 # Material UI
 
 # Redux
+
+# UseEffect
+
+- If no dependency array - useEffect will call after every component re-renders
+- If empty dependency array, useEffect will call after the initial component renders (just once)
+- If dependency array like [btn] , useEffect will call every time btn updates + initial render
+
+# React Router DOM
+
+- createBrowserRouter - takes all the configuration related to routes and helps us to create router config
+- RouterProvider - provides this router configuration to our app
+- Outlet - It is the component which react router dom provides and it will be filled with children component based on routes.. actually outlet component is replaced by that children component
+
+# Routing
+
+- There are two types of routing in web apps
+- Client Side - It's a single and just components get interchanged via client side rendering that's why react helps us to create single page web apps as it contains all the components
+- Server Side - make a network call and fetch a html page from server and show it to the screen like about, contact,etc
+
+# Class Based Component
+
+- When we are loading class based component that means we are creating the instance of that class based object
+
+# Single Responsibility Principle:
+
+- Code becomes more resulable (Modularity)
+- Code becomes more maintainable
+- Code becomes more testable
+
+# Custom Hooks
+
+- Creating a custom hook is not mandatory thing
+- It is a very good thing that helps us to make our good , more readable, more maintainable and more reusable
+
+# why can't we use async to useEffect callback
+
+# Chunking
+
+- Code Splitting
+- Dynamic Loading
+- Lazy Loading
+- Dynamic Import
+- Dynamic Bundling
+- On Demand Loading
+- All the above mentioned things are same,(Synonyms)
+
+# CSS
+
+- Normal CSS
+- SCSS and SASS
+- Styled Components
+- Material UI
+- Bootstrap
+- Ant Design
+- Chakra UI
+- Tailwind CSS
+
+Parcel Use postCssRc to understand tailwindCss
