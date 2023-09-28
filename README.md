@@ -205,3 +205,18 @@ APP
 - Tailwind CSS
 
 Parcel Use postCssRc to understand tailwindCss
+
+# Higher Order Component
+
+- It is a function which takes a component(function) and returns a component(function)
+
+# Every React application has 2 layers
+
+- UI Layer
+- Data Layer
+- UI Layer is powered by Data Layer
+
+- My Near Year begins with Learning Reac with Namaste React
+  -- Ajay Pathak
+  -- Chetak Nadda
+  -- Sandeep Kumar Dasari

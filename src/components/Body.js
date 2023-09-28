@@ -1,13 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withRestaurantCardOffers } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
   const [filterListOfRestaurants, setFilterListOfRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const { loggedInUserName, setUserName } = useContext(UserContext);
+
+  const RestaurantCardOffers = withRestaurantCardOffers(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -21,6 +24,7 @@ const Body = () => {
     const resData =
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || [];
+    console.log(resData);
     setlistOfRestaurants(resData);
     setFilterListOfRestaurants(resData);
   };
@@ -40,15 +44,16 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex items-center justify-between">
+        <div className="search p-4 m-4">
           <input
             type="text"
-            className="search-box"
+            className="border border-solid border-black"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
           <button
+            className="m-4 bg-green-100 px-4 py-2 rounded-xl"
             onClick={() => {
               const filteredResList = listOfRestaurants.filter((restaurant) =>
                 restaurant.info.name
@@ -62,25 +67,41 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredResList = listOfRestaurants.filter(
-              (restaurant) => restaurant.info.avgRating > 4
-            );
-            setFilterListOfRestaurants(filteredResList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+        <div className="search p-4 m-4">
+          <button
+            className="bg-green-100 px-4 py-2 rounded-lg"
+            onClick={() => {
+              const filteredResList = listOfRestaurants.filter(
+                (restaurant) => restaurant.info.avgRating > 4
+              );
+              setFilterListOfRestaurants(filteredResList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
+        <div className="search p-4 m-4">
+          <input
+            type="text"
+            value={loggedInUserName}
+            className="bg-green-100 px-4 py-2 rounded-lg"
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}
+          ></input>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filterListOfRestaurants.map((restaurant) => (
           <Link
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {!restaurant.info.hasOwnProperty("aggregatedDiscountInfoV3") ? (
+              <RestaurantCard resData={restaurant} />
+            ) : (
+              <RestaurantCardOffers resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>
